@@ -1,0 +1,112 @@
+*,
+*:after,
+*:before {
+    @include box-sizing(inherit);
+}
+html {
+    @include box-sizing(border-box);
+}
+body {
+    @include bg-image;
+    font-family: $fontMain;
+}
+.bg {
+    background-color: rgba($color: $black, $alpha: 0.45);
+    height: 100vh;
+    width: 100vw;
+}
+a {
+    text-decoration: none;
+    color: unset;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.contenedor {
+    max-width: 450px;
+    margin: 0 auto;
+}
+.formulario-login {
+    background-color: rgba($color: $black, $alpha: 0.75);
+    padding: 3.3rem 4rem;
+    display: flex;
+    flex-direction: column;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 24rem;
+
+        legend {
+            font-size: 2rem;
+            font-weight: 600;
+            color: $white;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+.campo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-basis: 4rem;
+
+    input {
+        height: 3rem;
+        background-color: $mine-shaft;
+        border: none;
+        outline: none;
+        padding: 1rem 1.3rem 0.1rem 1.3rem;
+        color: $white;
+        border-radius: 0.3rem;
+        
+        &:focus ~ label {   
+            font-size: .7rem;
+            top: .4rem;
+        }
+        &:focus {
+            background-color: $cape-cod;
+        }
+    }
+    label {
+        font-size: $link-and-label-size;
+        color: $gunsmoke;
+        position: absolute;
+        top: 1rem;
+        left: 1.3rem;
+    }
+}
+.submit {
+    input {
+        margin: 1.5rem 0 .8rem 0;
+        width: 100%;
+        padding: 0.8rem;
+        background-color: $punch;
+        border: none;
+        border-radius: 0.3rem;
+        color: $white;
+        cursor: pointer;
+    }
+}
+.acciones {
+    color: $nobel;
+    display: flex;
+    justify-content: space-between;
+    font-size: .8rem;
+
+    .recuerdame input[type="checkbox"] {
+        background-color: $nobel;
+        color: $nobel;
+    }
+}
+.contenido-inferior {
+    color: $gunsmoke;
+    a {
+        font-size: .8rem;
+    }
+    p a {
+        font-size: 1rem;
+        color: $white;
+    }
+}

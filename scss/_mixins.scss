@@ -1,0 +1,29 @@
+// Media Queries
+@mixin phone {
+    @media only screen and (min-width: #{$phone}) {
+        @content;
+    }   
+}
+@mixin tablet{
+    @media only screen and (min-width: #{$tablet}) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media only screen and (min-width: #{$desktop}) {
+        @content;
+    }
+}
+@mixin box-sizing($box-model) {
+    box-sizing: $box-model;
+}
+@mixin bg-image {
+    background-color: $black;
+
+    @include phone {
+        background-color: unset;
+        background-image: url('../img/bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

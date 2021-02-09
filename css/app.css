@@ -1,0 +1,133 @@
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (min-width: 480px) {
+  body {
+    background-color: unset;
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.bg {
+  background-color: rgba(0, 0, 0, 0.45);
+  height: 100vh;
+  width: 100vw;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.contenedor {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.formulario-login {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 3.3rem 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-login form {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 24rem;
+}
+
+.formulario-login form legend {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 1.5rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-basis: 4rem;
+}
+
+.campo input {
+  height: 3rem;
+  background-color: #333333;
+  border: none;
+  outline: none;
+  padding: 1rem 1.3rem 0.1rem 1.3rem;
+  color: #FFFFFF;
+  border-radius: 0.3rem;
+}
+
+.campo input:focus ~ label {
+  font-size: .7rem;
+  top: .4rem;
+}
+
+.campo input:focus {
+  background-color: #454545;
+}
+
+.campo label {
+  font-size: 1rem;
+  color: #8C8C8C;
+  position: absolute;
+  top: 1rem;
+  left: 1.3rem;
+}
+
+.submit input {
+  margin: 1.5rem 0 .8rem 0;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #E50914;
+  border: none;
+  border-radius: 0.3rem;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.acciones {
+  color: #B3B3B3;
+  display: flex;
+  justify-content: space-between;
+  font-size: .8rem;
+}
+
+.acciones .recuerdame input[type="checkbox"] {
+  background-color: #B3B3B3;
+  color: #B3B3B3;
+}
+
+.contenido-inferior {
+  color: #8C8C8C;
+}
+
+.contenido-inferior a {
+  font-size: .8rem;
+}
+
+.contenido-inferior p a {
+  font-size: 1rem;
+  color: #FFFFFF;
+}
