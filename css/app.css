@@ -13,7 +13,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 768px) {
   body {
     background-color: unset;
     background-image: url("../img/bg.jpg");
@@ -24,59 +24,100 @@ body {
 
 .bg {
   background-color: rgba(0, 0, 0, 0.45);
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 a {
-  text-decoration: none;
   color: unset;
+  text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-.contenedor {
-  max-width: 450px;
-  margin: 0 auto;
+.site-header {
+  padding: 1rem .2rem;
+  width: 95%;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-header {
+    margin-bottom: 1rem;
+  }
+}
+
+.site-header img {
+  width: 5rem;
+}
+
+@media only screen and (min-width: 480px) {
+  .site-header img {
+    width: 11rem;
+  }
+}
+
+.main-container {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-container {
+    max-width: 450px;
+    margin: 0 auto;
+  }
 }
 
 .formulario-login {
-  background-color: rgba(0, 0, 0, 0.75);
-  padding: 3.3rem 4rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid #757575;
   display: flex;
   flex-direction: column;
+  padding: .8rem 1rem 6rem 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .formulario-login {
+    border-bottom: 1px solid transparent;
+    padding: 3.3rem 4rem;
+  }
 }
 
 .formulario-login form {
   display: flex;
+  flex-basis: 21rem;
   flex-direction: column;
-  flex-basis: 24rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .formulario-login form {
+    flex-basis: 24rem;
+  }
 }
 
 .formulario-login form legend {
+  color: #FFFFFF;
   font-size: 2rem;
   font-weight: 600;
-  color: #FFFFFF;
   margin-bottom: 1.5rem;
 }
 
 .campo {
   display: flex;
+  flex-basis: 4rem;
   flex-direction: column;
   position: relative;
-  flex-basis: 4rem;
 }
 
 .campo input {
-  height: 3rem;
   background-color: #333333;
   border: none;
+  border-radius: 0.3rem;
+  color: #FFFFFF;
+  height: 3rem;
   outline: none;
   padding: 1rem 1.3rem 0.1rem 1.3rem;
-  color: #FFFFFF;
-  border-radius: 0.3rem;
 }
 
 .campo input:focus ~ label {
@@ -89,29 +130,43 @@ a:hover {
 }
 
 .campo label {
-  font-size: 1rem;
   color: #8C8C8C;
+  font-size: 1rem;
+  left: 1.3rem;
   position: absolute;
   top: 1rem;
-  left: 1.3rem;
+  transition: font-size 200ms ease, top 200ms ease;
+}
+
+.campo .btn-pwd {
+  background-color: transparent;
+  border: none;
+  border-radius: .3rem;
+  color: #8C8C8C;
+  cursor: pointer;
+  outline: none;
+  padding: .9rem .5rem;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
 }
 
 .submit input {
-  margin: 1.5rem 0 .8rem 0;
-  width: 100%;
-  padding: 0.8rem;
+  color: #FFFFFF;
   background-color: #E50914;
   border: none;
   border-radius: 0.3rem;
-  color: #FFFFFF;
   cursor: pointer;
+  margin: 1.5rem 0 .8rem 0;
+  padding: 0.8rem;
+  width: 100%;
 }
 
 .acciones {
   color: #B3B3B3;
   display: flex;
-  justify-content: space-between;
   font-size: .8rem;
+  justify-content: space-between;
 }
 
 .acciones .recuerdame input[type="checkbox"] {
@@ -125,9 +180,69 @@ a:hover {
 
 .contenido-inferior a {
   font-size: .8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.contenido-inferior a[id="logo-facebook"]::before {
+  background-image: url("../img/facebook.png");
+  background-position: cover;
+  background-repeat: no-repeat;
+  background-size: 1.2rem;
+  content: "";
+  display: inline-block;
+  height: 1.2rem;
+  left: 0;
+  margin-right: .5rem;
+  position: absolute;
+  top: -.2rem;
+  width: 1.2rem;
 }
 
 .contenido-inferior p a {
-  font-size: 1rem;
   color: #FFFFFF;
+  padding-left: 0;
+  font-size: 1rem;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 2rem 1rem 3rem 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  footer {
+    margin-top: 10rem;
+  }
+}
+
+.footer-content {
+  color: #757575;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+.footer-content .menu-footer {
+  display: flex;
+  flex-flow: wrap row;
+  font-size: .8rem;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.footer-content .menu-footer a {
+  flex: 0 0 27%;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-content #idioma {
+  -webkit-appearance: none;
+  background-color: #000000;
+  border-color: #757575;
+  color: #757575;
+  padding: 1rem;
+  width: 8.3rem;
 }

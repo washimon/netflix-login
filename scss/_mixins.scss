@@ -20,7 +20,7 @@
 @mixin bg-image {
     background-color: $black;
 
-    @include phone {
+    @include tablet {
         background-color: unset;
         background-image: url('../img/bg.jpg');
         background-repeat: no-repeat;

@@ -12,54 +12,83 @@ body {
 }
 .bg {
     background-color: rgba($color: $black, $alpha: 0.45);
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 a {
-    text-decoration: none;
     color: unset;
+    text-decoration: none;
 
     &:hover {
         text-decoration: underline;
     }
 }
-.contenedor {
-    max-width: 450px;
-    margin: 0 auto;
+.site-header {
+    padding: 1rem .2rem;
+    width: 95%;
+
+    @include tablet {
+        margin-bottom: 1rem;
+    }
+    img {
+        width: 5rem;
+        
+        @include phone {
+            width: 11rem;
+        }
+    }
+}
+.main-container {
+    width: 100%;
+    
+    @include tablet {
+        max-width: 450px;
+        margin: 0 auto;
+    }
 }
 .formulario-login {
-    background-color: rgba($color: $black, $alpha: 0.75);
-    padding: 3.3rem 4rem;
+    background-color: rgba($color: $black, $alpha: 0.8);
+    border-bottom: 1px solid $boulder;
     display: flex;
     flex-direction: column;
-
+    padding: .8rem 1rem 6rem 1rem;
+    
+    @include tablet {
+        border-bottom: 1px solid transparent;
+        padding: 3.3rem 4rem;
+    }
+    
     form {
         display: flex;
+        flex-basis: 21rem;
         flex-direction: column;
-        flex-basis: 24rem;
+        
+        @include tablet {
+            flex-basis: 24rem;
+        }
 
         legend {
+            color: $white;
             font-size: 2rem;
             font-weight: 600;
-            color: $white;
             margin-bottom: 1.5rem;
         }
     }
 }
 .campo {
     display: flex;
+    flex-basis: 4rem;
     flex-direction: column;
     position: relative;
-    flex-basis: 4rem;
 
     input {
-        height: 3rem;
         background-color: $mine-shaft;
         border: none;
+        border-radius: 0.3rem;
+        color: $white;
+        height: 3rem;
         outline: none;
         padding: 1rem 1.3rem 0.1rem 1.3rem;
-        color: $white;
-        border-radius: 0.3rem;
         
         &:focus ~ label {   
             font-size: .7rem;
@@ -70,30 +99,44 @@ a {
         }
     }
     label {
-        font-size: $link-and-label-size;
         color: $gunsmoke;
+        font-size: $link-and-label-size;
+        left: 1.3rem;
         position: absolute;
         top: 1rem;
-        left: 1.3rem;
+        transition: font-size 200ms ease, top 200ms ease;
+    }
+    .btn-pwd {
+        background-color: transparent;
+        border: none;
+        border-radius: .3rem;
+        color: #8C8C8C;
+        cursor: pointer;
+        // display: none;
+        outline: none;
+        padding: .9rem .5rem;
+        position: absolute;
+        right: 0;
+        text-transform: uppercase;
     }
 }
 .submit {
     input {
-        margin: 1.5rem 0 .8rem 0;
-        width: 100%;
-        padding: 0.8rem;
+        color: $white;
         background-color: $punch;
         border: none;
         border-radius: 0.3rem;
-        color: $white;
         cursor: pointer;
+        margin: 1.5rem 0 .8rem 0;
+        padding: 0.8rem;
+        width: 100%;
     }
 }
 .acciones {
     color: $nobel;
     display: flex;
-    justify-content: space-between;
     font-size: .8rem;
+    justify-content: space-between;
 
     .recuerdame input[type="checkbox"] {
         background-color: $nobel;
@@ -102,11 +145,67 @@ a {
 }
 .contenido-inferior {
     color: $gunsmoke;
+
     a {
         font-size: .8rem;
+        padding-left: 1.5rem;
+        position: relative;
+
+        &[id="logo-facebook"]::before {
+            background-image: url('../img/facebook.png');
+            background-position: cover;
+            background-repeat: no-repeat;
+            background-size: 1.2rem;
+            content: "";
+            display: inline-block;
+            height: 1.2rem;
+            left: 0;
+            margin-right: .5rem;
+            position: absolute;
+            top: -.2rem;
+            width: 1.2rem;
+        }
     }
     p a {
-        font-size: 1rem;
         color: $white;
+        padding-left: 0;
+        font-size: 1rem;
+    }
+}
+footer {
+    background-color: rgba($color: $black, $alpha: 0.75);
+    padding: 2rem 1rem 3rem 1rem;
+    
+    @include tablet {
+        margin-top: 10rem;
+    }
+}
+.footer-content {
+    color: $boulder;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1024px;
+
+    .menu-footer {
+        display: flex;
+        flex-flow: wrap row;
+        font-size: .8rem;
+        justify-content: flex-start;
+        margin-bottom: 2rem;
+
+        a {
+            flex: 0 0 27%;
+            padding-right: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+    #idioma {
+        -webkit-appearance: none;
+        background-color: $black;
+        border-color: $boulder;
+        color: $boulder;
+        padding: 1rem;
+        width: 8.3rem;
     }
 }
